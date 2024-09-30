@@ -46,6 +46,7 @@ public class Application {
         final JoinTeamUseCase joinTeamUseCase = config.joinTeamUseCase();
         final LeaveTeamUseCase leaveTeamUseCase = config.leaveTeamUseCase();
         final GetAverageGradeUseCase getAverageGradeUseCase = config.getAverageGradeUseCase();
+        final GetTopGradeUseCase getTopGradeUseCase = config.getTopGradeUseCase();
 
         // this is the code that runs to set up our GUI
         SwingUtilities.invokeLater(() -> {
@@ -61,7 +62,7 @@ public class Application {
             final JPanel logGradeCard = createLogGradeCard(frame, logGradeUseCase);
             final JPanel formTeamCard = createFormTeamCard(frame, formTeamUseCase);
             final JPanel joinTeamCard = createJoinTeamCard(frame, joinTeamUseCase);
-            final JPanel manageTeamCard = createManageTeamCard(frame, leaveTeamUseCase, getAverageGradeUseCase);
+            final JPanel manageTeamCard = createManageTeamCard(frame, leaveTeamUseCase, getAverageGradeUseCase, getTopGradeUseCase);
 
             cardPanel.add(defaultCard, "DefaultCard");
             cardPanel.add(getGradeCard, "GetGradeCard");
@@ -282,6 +283,7 @@ public class Application {
         });
         theCard.add(new JLabel("The course you want to calculate the team average for:"));
         theCard.add(courseField);
+        theCard.add(getTopGradeButton);
         theCard.add(getAverageButton);
         theCard.add(leaveTeamButton);
         theCard.add(resultLabel);
