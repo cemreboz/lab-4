@@ -267,7 +267,7 @@ public class Application {
             final String course = courseField.getText();
 
             try {
-                final float top = GetTopGradeUseCase.getTopGrade(course);
+                final float top = getTopGradeUseCase.getTopGrade(course);
                 JOptionPane.showMessageDialog(jFrame, "Top Grade: " + top);
                 courseField.setText("");
             }
